@@ -8,7 +8,7 @@ module Attacker
   end
 
   def drain_energy_from defender
-    throw 'mixin method requirement'
+    defender.reduce_energy self.attack_points - defender.defense_points
   end
 
   def can_attack? defender

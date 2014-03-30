@@ -11,8 +11,4 @@ class Warrior
     self.defense_points= 20
   end
 
-  def drain_energy_from defender
-    defender.reduce_energy self.attack_points - defender.defense_points
-  end
-
 end

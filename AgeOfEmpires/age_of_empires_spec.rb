@@ -39,4 +39,23 @@ describe 'Age of Empires' do
       tomahawk.reduce_energy 10
     }.to raise_error NoMethodError
   end
+
+  it 'kills Atila warrior with Tomahawk missile' do
+    tomahawk = Missile.new
+    atila = Warrior.new
+
+    tomahawk.attack atila
+
+    atila.energy.should == 0
+  end
+
+  it 'should leave Chinnese Wall with 100 energy by Tomahawk missile attack' do
+    tomahawk = Missile.new
+    chinnese_wall = Wall.new
+
+    tomahawk.attack chinnese_wall
+
+    chinnese_wall.energy.should == 100
+  end
+
 end
