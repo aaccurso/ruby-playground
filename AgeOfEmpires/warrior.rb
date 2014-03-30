@@ -1,5 +1,7 @@
-class Warrior
-  attr_accessor :energy, :attack_points, :defense_points
+require File.expand_path(File.dirname(__FILE__) + '/defender.rb')
+
+class Warrior < Defender
+  attr_accessor :attack_points
 
   def initialize
     self.energy= 100
@@ -7,21 +9,19 @@ class Warrior
     self.defense_points= 20
   end
 
-  def attack warrior
-    if self.can_attack? warrior
-      drain_energy_from warrior
+  def attack defender
+    if self.can_attack? defender
+      drain_energy_from defender
     end
   end
 
-  def drain_energy_from warrior
-    warrior.reduce_energy self.attack_points - self.defense_points
+  def drain_energy_from defender
+    defender.reduce_energy self.attack_points - self.defense_points
   end
 
-  def can_attack? warrior
-    warrior.defense_points < self.attack_points
+  def can_attack? defender
+    defender.defense_points < self.attack_points
   end
 
-  def reduce_energy points
-    self.energy= self.energy - points
-  end
+
 end

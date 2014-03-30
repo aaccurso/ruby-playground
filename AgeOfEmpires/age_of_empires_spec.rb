@@ -1,6 +1,7 @@
 require 'rspec'
 require '../AgeOfEmpires/warrior'
 require '../AgeOfEmpires/swordsman'
+require '../AgeOfEmpires/wall'
 
 describe 'Age of Empires' do
 
@@ -22,4 +23,11 @@ describe 'Age of Empires' do
     atila.energy.should == 70
   end
 
+  it 'should not allow Wall to attack' do
+    chinnese_wall = Wall.new
+
+    expect {
+      chinnese_wall.attack Warrior.new
+    }.to raise_error NoMethodError
+  end
 end
