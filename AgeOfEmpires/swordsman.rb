@@ -1,5 +1,3 @@
-require '../AgeOfEmpires/warrior'
-
 class Swordsman < Warrior
   attr_accessor :level, :weapon_points
 

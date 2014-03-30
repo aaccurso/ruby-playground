@@ -1,7 +1,9 @@
-require File.expand_path(File.dirname(__FILE__) + '/defender.rb')
+require '../AgeOfEmpires/defender'
+require '../AgeOfEmpires/attacker'
 
-class Warrior < Defender
-  attr_accessor :attack_points
+class Warrior
+  include Attacker
+  include Defender
 
   def initialize
     self.energy= 100
@@ -9,19 +11,8 @@ class Warrior < Defender
     self.defense_points= 20
   end
 
-  def attack defender
-    if self.can_attack? defender
-      drain_energy_from defender
-    end
-  end
-
   def drain_energy_from defender
-    defender.reduce_energy self.attack_points - self.defense_points
+    defender.reduce_energy self.attack_points - defender.defense_points
   end
-
-  def can_attack? defender
-    defender.defense_points < self.attack_points
-  end
-
 
 end

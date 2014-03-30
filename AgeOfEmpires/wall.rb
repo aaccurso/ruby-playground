@@ -1,3 +1,3 @@
-class Wall < Defender
-
+class Wall
+  include Defender
 end

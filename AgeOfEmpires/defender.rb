@@ -1,4 +1,4 @@
-class Defender
+module Defender
   attr_accessor :energy, :defense_points
 
   def reduce_energy points
