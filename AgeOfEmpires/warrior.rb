@@ -9,8 +9,12 @@ class Warrior
 
   def attack warrior
     if self.can_attack? warrior
-      warrior.reduce_energy self.attack_points - self.defense_points
+      drain_energy_from warrior
     end
+  end
+
+  def drain_energy_from warrior
+    warrior.reduce_energy self.attack_points - self.defense_points
   end
 
   def can_attack? warrior
