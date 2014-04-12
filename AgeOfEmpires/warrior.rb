@@ -1,6 +1,3 @@
-require '../AgeOfEmpires/defender'
-require '../AgeOfEmpires/attacker'
-
 class Warrior
   include Attacker
   include Defender

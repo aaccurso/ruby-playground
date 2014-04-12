@@ -1,4 +1,6 @@
 require 'rspec'
+require '../AgeOfEmpires/defender'
+require '../AgeOfEmpires/attacker'
 require '../AgeOfEmpires/warrior'
 require '../AgeOfEmpires/swordsman'
 require '../AgeOfEmpires/wall'
